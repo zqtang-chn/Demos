@@ -1,9 +1,12 @@
 # 个人开发的Demos
 
- - `fuzz-helper` afl-fuzz的助手
-    + `readbit.c`   位流(bit stream)读取器
-    + `memory.c`    空间主动释放，减少fuzz误报
-    + `cvector.c`   用C写的类似STL vector的工具类
-    + `libfuzzer.a` Ubuntu下编译的libfuzzer库，可直接和fuzz harness编译
+- `fuzz-helper` afl-fuzz和libfuzzer的助手。涉及到C中的内存释放、cvector和位读工具。
+- `transformer` 熟悉transformer的代码论文和代码细节，训练一个中英翻译器。
+- `` 
+
+
+
+
+
 
    
