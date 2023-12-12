@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World!</title>
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+    <button id="readFile">Read File</button>
+    <pre id="fileContent"></pre>
+
+    <script>
+      document.getElementById('readFile').addEventListener('click', async () => {
+        try {
+          const data = await window.electron.readFile('example.txt');
+          document.getElementById('fileContent').textContent = data;
+        } catch (error) {
+          console.error('Failed to read file', error);
+        }
+      });
+    </script>
+
+    <button id="readFileNode">Read File By NodeJS</button>
+    <pre id="fileContentNode"></pre>
+
+    <script>
+        const fs = require('fs');
+  
+        document.getElementById('readFileNode').addEventListener('click', () => {
+          fs.readFile('example.txt', 'utf-8', (err, data) => {
+            if (err) {
+              console.error(err);
+              return;
+            }
+            document.getElementById('fileContentNode').textContent = data;
+          });
+        });
+      </script>
+
+
+  </body>
+</html>

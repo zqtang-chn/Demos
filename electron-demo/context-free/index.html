@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World!</title>
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+    <button id="readFile">Read File</button>
+    <pre id="fileContent"></pre>
+
+    <script>
+      const fs = require('fs');
+
+      document.getElementById('readFile').addEventListener('click', () => {
+        fs.readFile('example.txt', 'utf-8', (err, data) => {
+          if (err) {
+            console.error(err);
+            return;
+          }
+          document.getElementById('fileContent').textContent = data;
+        });
+      });
+    </script>
+  </body>
+</html>
